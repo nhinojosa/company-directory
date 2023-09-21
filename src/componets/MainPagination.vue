@@ -21,7 +21,7 @@ const nextPage = () => {
 
 <template>
     <div class="pageination">
-         <button class="action" :disableed="activePage === 1" @click="prePage">Prev</button>
+         <button class="action" :disabled="activePage === 1" @click="prePage">Prev</button>
             <button class="page" v-for="page in pages" :class="page === activePage ? 'active' : ''" @click="activePage = page">
                 {{ page }}
                 </button>
