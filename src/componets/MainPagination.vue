@@ -20,6 +20,8 @@ const nextPage = () => {
 
 
 <template>
+
+    <!-- This code below activates the page numbers at the bottom of the page.-->
     <div class="pageination">
          <button class="action" :disabled="activePage === 1" @click="prePage">Prev</button>
             <button class="page" v-for="page in pages" :class="page === activePage ? 'active' : ''" @click="activePage = page">
@@ -28,8 +30,12 @@ const nextPage = () => {
             <button class="action" :disabled="activePage === pages" @click="nextPage">Next</button>
          <button> </button>
     </div>
+    <!---------------------------------------------------------------------------------------------->
+    <!---------------------------------------------------------------------------------------------->
 </template>
 
+
+<!---------------- STYLING OF THE ICONS OF THE PAGE INATION   -------------------------------------->
 <style lang="postcss" scoped>
     .pageination {
         @apply flex justify-center gap-4;
@@ -44,3 +50,4 @@ const nextPage = () => {
         }
     }
 </style>
+<!---------------- STYLING OF THE ICONS OF THE PAGE INATION   -------------------------------------->
