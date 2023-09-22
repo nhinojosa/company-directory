@@ -1,7 +1,7 @@
 <script setup>
 
-import NavBar from './componets/NavBar.vue'
-import Main from './componets/Main.vue'
+import NavBar from '@/components/NavBar.vue'
+import MainPage from '@/components/MainPage.vue'
 
 
 </script>
@@ -10,7 +10,7 @@ import Main from './componets/Main.vue'
 <template>
 
     <NavBar />
-   <Main /> 
+   <MainPage /> 
  
 
 
