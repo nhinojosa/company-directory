@@ -38,9 +38,14 @@ const nextPage = () => {
 <!---------------- STYLING OF THE ICONS OF THE PAGE INATION   -------------------------------------->
 <style lang="postcss" scoped>
     .pageination {
+
+    
+        
+
         @apply flex justify-center gap-4;
         .action {
             @apply rounded-md bg-slate-100 p-2 font-medium text-slate-700 shadow-md hover:bg-blue-200 disabled:text-slate-200 hover:disabled:bg-slate-100;
+            
         }
         .page {
             @apply rounded-md bg-slate-100 p-2 font-medium text-slate-700 shadow-md hover:bg-blue-200;

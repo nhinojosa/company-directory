@@ -33,8 +33,8 @@ const brand = ref('🏦 Fake Company Directory')
         @apply flex h-20 bg-blue-900 text-slate-200;
         .wrapper {
             @apply container mx-auto flex w-full items-center justify-between;
-            .brand {
-                
+            .brand { 
+                 
                &-title {
                 
                     @apply text-2xl font-bold text-slate-300;
