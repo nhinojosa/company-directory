@@ -48,7 +48,7 @@
      
     @apply cursor-pointer overflow-hidden rounded-md bg-slate-100 p-8 shadow-md 
     transition-transform duration-300 
-    hover:scale-110 hover:shadow-2xl hover:shadow-slate-900;
+    hover:scale-110 hover:shadow-2xl hover:shadow-blue-900;
     &-image {
         img {
         @apply mx-auto rounded-full object-contain;
@@ -61,7 +61,7 @@
         }
 
         &-job {
-            @apply -mt-2 text-xs text-yellow-700;
+            @apply -mt-2 text-xs text-blue-700;
         }
         
 
