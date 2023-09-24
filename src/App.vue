@@ -1,7 +1,8 @@
 <script setup>
 
 import NavBar from '@/components/NavBar.vue'
-import MainPage from '@/components/MainPage.vue'
+// since we used  router in main we dont need this anymore
+//import MainPage from '@/components/MainPage.vue'
 
 
 </script>
@@ -10,7 +11,10 @@ import MainPage from '@/components/MainPage.vue'
 <template>
 
     <NavBar />
-   <MainPage /> 
+
+    <!-- Subsituting the mainPage with router -->
+    <RouterView />
+    <!-- <MainPage /> -->
  
 
 
