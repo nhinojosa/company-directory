@@ -12,7 +12,8 @@
     "@vueuse/core": "^10.4.1",
     "canvas-confetti": "^1.6.0",
     "nanoid": "^5.0.1",
-    "vue": "^3.3.4"
+    "vue": "^3.3.4",
+    "vue-router": "^4.2.5"
   },
   "devDependencies": {
     "@faker-js/faker": "^8.1.0",
