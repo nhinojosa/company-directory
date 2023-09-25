@@ -1,7 +1,10 @@
 <script setup>
+    import { ref } from 'vue'
     import { faker } from '@faker-js/faker'
 
-    const fullName =faker.name.fullName()
+    import useAPI from '@/composables/useAPI'
+
+    const { getDepartment } = useAPI()
 
     /*
     const firstName =faker.name.fullName()          <------- THIS WORKS TOO ALL TOGETHER
@@ -17,8 +20,28 @@
     const fullName = '${firstName} ${lastName}'     <----- Professor might have another way.
     */
     const selectCard = () => {
-     console.log('${fullName} selected')
+     console.log('${props.employee.name} selected')
     }
+
+    const props = defineProps({
+        employee: {
+            type: objectEntries,
+            required: true,
+            default: () => {
+                return {
+                    createAt: '2022-01-01',
+                    departmentId: '123',
+                    email: 'John Doe',
+                    name: 'Really Cool quote',
+                    title: 'Postion',
+                    updateAt: '2022-01-01',
+                }
+            },
+        },
+    })
+
+        const departmentResponse = await getDepartment(props.employee.departmentId)
+        const department = ref(departmentResponse)
     </script>
 
 
@@ -32,9 +55,9 @@
     <!-- We did not use "div" anymore -->
     <!-- <div> -->
      <div class="card-details">
-       <p class="card-details-name">{{ fullName }}</p>
-       <p class="card-details-job">{{ faker.name.jobTitle() }}, {{ faker.name.jobArea() }} </p>
-       <p class="card-details-quote">"{{ faker.lorem.paragraph() }}"</p>
+       <p class="card-details-name">{{ props.employee.name }}</p>
+       <p class="card-details-job">{{ props.employee.title }}, {{ department.names }} </p>
+       <p class="card-details-quote">"{{ props.employee.quote }}"</p>
      </div>
     <!-- </div>-->
     <!-- remember to comment out "div"-->
@@ -46,9 +69,7 @@
 
 .card {
      
-    @apply cursor-pointer overflow-hidden rounded-md bg-slate-100 p-8 shadow-md 
-    transition-transform duration-300 
-    hover:scale-110 hover:shadow-2xl hover:shadow-blue-900;
+    @apply cursor-pointer overflow-hidden rounded-md bg-slate-100 p-8 shadow-md transition-transform duration-300 hover:scale-110 hover:shadow-2xl hover:shadow-blue-900;
     &-image {
         img {
         @apply mx-auto rounded-full object-contain;
