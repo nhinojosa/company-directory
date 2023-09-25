@@ -17,12 +17,12 @@ const brand = ref('🏦 Fake Company Directory')
         <p v-show="isAuthenticated" class="px-2 py-4">
           Welcome back
           <strong>
-            <i>{{ user?.email }}</i>
+            <i>{{ user.email }}</i>
           </strong>
         </p>
         <div v-if="isAuthenticated">
           <RouterLink :to="{ name: 'Settings' }" href="#" class="menu-item">Settings</RouterLink>
-          <button class="menu-logout" @click="logout">Logout</button>
+          <button href="#" class="menu-logout" @click="logout">Logout</button>
         </div>
         <div v-else>
           <RouterLink :to="{ name: 'Login' }" href="#" class="menu-login">Login</RouterLink>
