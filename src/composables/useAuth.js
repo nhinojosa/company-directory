@@ -22,22 +22,23 @@ const dbUser = [
 ]
 
 
-
 export const useAuth = () => {
     const login = (username, password) => {
-        const dbUser = dbUser.find((u) => u.username == username && u.password == password)
-        if (dbUser) {
+        const dbuser = dbUser.find((u) => u.username == username && u.password == password)
+        if (dbuser) {
+            const {name, role, email, username} = dbuser
             isAuthenticated.value = true
             user.value = { name, role, email, username }
             return true
         }
-        return false 
+        return false
     }
 
     const logout = () => {
-        isAuthenticated.value = false
+        isAuthenticated.value = false 
         user.value = {}
-        router.push({ name: 'Home' })
+        router.push({ name: 'Home'})
+
     }
-    return { isAuthenticated, user, login, logout}
+    return { isAuthenticated, user, login, logout }
 }
