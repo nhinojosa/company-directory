@@ -18,7 +18,7 @@ const routes = [
 
 import { createRouter, createWebHistory } from 'vue-router'
 
-import { useAuth } from '@/composables/useAuth'
+import { useAuth } from '@/composables/useAuth' 
 const { isAuthenticated } = useAuth()
 
 import MainPage from '@/components/MainPage.vue'
@@ -39,7 +39,8 @@ const router = createRouter({
 })
 
 router.beforeEach((to, _, next) => {
-  if (to.meta.requiresAuth && !isAuthenticated.value) next({ name: 'Login', query: { redirect: to.fullPath } })
+  if (to.meta.requiresAuth && !isAuthenticated.value) 
+  next({ name: 'Login', query: { redirect: to.fullPath } })
   else next()
 })
 
