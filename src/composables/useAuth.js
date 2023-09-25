@@ -1,22 +1,7 @@
 import { ref } from 'vue'
 
-const dbUsers= [
- {
-    username: 'admin',
-    password: 'admin',
-    name: 'Admin',
-    role: 'admin',
-    eamil: 'admin@cool-company,com',
- },
-{
-    username: 'user',
-    password: 'user',
-    name: 'User',
-    role: 'user',
-    eamil: 'user@cool-company,com',
-},
-
-]
+const dbUsers= 
+[]
 
 const isAuthenticated =ref(false)
 const user = ref({})

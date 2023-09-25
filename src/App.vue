@@ -10,7 +10,7 @@ import NavBar from '@/components/NavBar.vue'
 
 <template>
 
-    <NavBar />
+    <NavBar /> 
 
     <!-- Subsituting the mainPage with router -->
     <RouterView />
