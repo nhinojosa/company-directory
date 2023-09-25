@@ -24,7 +24,7 @@ const nextPage = () => {
     <!-- This code below activates the page numbers at the bottom of the page.-->
     <div class="pageination">
          <button class="action" :disabled="activePage === 1" @click="prePage">Prev</button>
-            <button v-for="page in pages" class="page" :class="page === activePage ? 'active' : ''" @click="activePage = page">
+            <button v-for="page in pages" class="page" v-bind:key="page" :class="page === activePage ? 'active' : ''" @click="activePage = page">
                 {{ page }}
                 </button>
             <button class="action" :disabled="activePage === pages" @click="nextPage">Next</button>
