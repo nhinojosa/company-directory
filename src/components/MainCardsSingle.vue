@@ -1,16 +1,11 @@
 <script setup>
-    import { ref } from 'vue'
+    
     import { faker } from '@faker-js/faker'
-
-    import useAPI from '@/composables/useAPI'
-
-    const { getDepartment } = useAPI()
-
-    /*
-    const firstName =faker.name.fullName()          <------- THIS WORKS TOO ALL TOGETHER
-    const lastName =faker.name.lastName()           <------- THIS WORKS TOO ALL TOGETHER
-    const fullName = '${firstName} ${lastName}'     <------- THIS WORKS TOO ALL TOGETHER
-    */
+    
+    const firstName =faker.name.fullName()          
+    const lastName =faker.name.lastName()           
+    const fullName = '${firstName} ${lastName}'     
+    
 
     /*Use code above instead of line 4 */
    
@@ -20,28 +15,8 @@
     const fullName = '${firstName} ${lastName}'     <----- Professor might have another way.
     */
     const selectCard = () => {
-     console.log('${props.employee.name} selected')
+     console.log('${fullName} selected')
     }
-
-    const props = defineProps({
-        employee: {
-            type: objectEntries,
-            required: true,
-            default: () => {
-                return {
-                    createAt: '2022-01-01',
-                    departmentId: '123',
-                    email: 'John Doe',
-                    name: 'Really Cool quote',
-                    title: 'Postion',
-                    updateAt: '2022-01-01',
-                }
-            },
-        },
-    })
-
-        const departmentResponse = await getDepartment(props.employee.departmentId)
-        const department = ref(departmentResponse)
     </script>
 
 
@@ -55,9 +30,9 @@
     <!-- We did not use "div" anymore -->
     <!-- <div> -->
      <div class="card-details">
-       <p class="card-details-name">{{ props.employee.name }}</p>
-       <p class="card-details-job">{{ props.employee.title }}, {{ department.names }} </p>
-       <p class="card-details-quote">"{{ props.employee.quote }}"</p>
+       <p class="card-details-name">{{ fullName }}</p>
+       <p class="card-details-job">{{ faker.name.jobTitle() }}, {{ faker.name.jobArea() }} </p>
+       <p class="card-details-quote">"{{ faker.lorem.paragraph() }}"</p>
      </div>
     <!-- </div>-->
     <!-- remember to comment out "div"-->
