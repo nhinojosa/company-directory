@@ -2,8 +2,8 @@
     
     import { faker } from '@faker-js/faker'
     
-    const firstName =faker.name.fullName()          
-    const lastName =faker.name.lastName()           
+    const firstName = faker.name.fullName()          
+    const lastName = faker.name.lastName()           
     const fullName = '${firstName} ${lastName}'     
     
 
