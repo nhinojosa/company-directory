@@ -1,8 +1,7 @@
-<script setup>
-    
+<script setup> 
     import { faker } from '@faker-js/faker'
     
-    const firstName = faker.name.fullName()          
+    const firstName = faker.name.firstName()          
     const lastName = faker.name.lastName()           
     const fullName = '${firstName} ${lastName}'     
     
@@ -16,7 +15,7 @@
     */
     const selectCard = () => {
      console.log('${fullName} selected')
-    }
+     }
     </script>
 
 
